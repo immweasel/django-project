@@ -1,3 +1,8 @@
-from django.shortcuts import render
+from rest_framework.viewsets import ModelViewSet
+from .serializers import RestaurantSerializer
+from .models import Restaurant
 
-# Create your views here.
+
+class RestaurantViewSet(ModelViewSet):
+    queryset = Restaurant.objects.all()
+    serializer_class = RestaurantSerializer
