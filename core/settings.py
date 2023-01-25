@@ -40,6 +40,11 @@ INSTALLED_APPS = [
 
     #Custom apps
     'authentification',
+    'menu',
+    'restaurant',
+    'review',
+    'table',
+    'booking',
 ]
 
 MIDDLEWARE = [
