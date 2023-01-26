@@ -1,9 +1,7 @@
 from django.contrib import admin
 from booking.models import Booking
-from import_export.admin import Booking
-from django.contrib import admin
+from import_export.admin import ImportExportMixin
 from modeltranslation.admin import TranslationAdmin
-from booking.models import Booking
 
 class BookingAdmin(ImportExportMixin, TranslationAdmin):
     list_display = ('id', 'table', 'date', 'time', 'user', 'number_of_guests')

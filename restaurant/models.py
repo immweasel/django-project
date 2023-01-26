@@ -1,6 +1,6 @@
 from django.db import models
 from menu.models import Menu
-# Create your models here.
+from authentification.models import User
 
 
 class Restaurant(models.Model):
@@ -16,3 +16,7 @@ class Restaurant(models.Model):
     class Meta:
         verbose_name = 'Ресторан'
         verbose_name_plural = 'Рестораны'
+
+class FavouriteRestaurant(models.Model):
+    user = models.ForeignKey(User, verbose_name='User', on_delete=models.CASCADE)
+    restaurant = models.ForeignKey(Restaurant, verbose_name='Restaurant', on_delete=models.CASCADE)

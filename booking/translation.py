@@ -1,6 +1,7 @@
 from .models import Booking
-from modeltranslation.translator import TranslationOptions, register
+from modeltranslation.translator import translator, TranslationOptions
 
-@register(Booking)
 class BookingTranslation(TranslationOptions):
-    fields = ('id', 'table', 'date', 'time', 'number_of_guests')
+    fields = ('table', 'date', 'time', 'number_of_guests')
+
+translator.register(Booking, BookingTranslation)
